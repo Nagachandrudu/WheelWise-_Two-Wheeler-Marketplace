@@ -1,0 +1,153 @@
+import { Vehicle, VehicleType, FuelType, Showroom } from './types';
+
+export const VEHICLES: Vehicle[] = [
+  {
+    id: 1,
+    name: 'Splendor Plus',
+    brand: 'Hero',
+    price: 75000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/--drum-obd-2b1744868494481.jpg?q=80',
+    mileage: '65 kmpl',
+    engine: '97.2 cc',
+    power: '8.02 PS',
+    brakes: 'Drum',
+    description: 'The Hero Splendor Plus is one of the most popular and reliable commuter bikes in India, known for its fuel efficiency and low maintenance cost.',
+    specs: { 'Engine Type': 'Air cooled, 4-stroke, single cylinder', 'Displacement': '97.2 cc', 'Max Power': '8.02 PS @ 8000 rpm', 'Fuel Capacity': '9.8 L' },
+  },
+  {
+    id: 2,
+    name: 'Activa 6G',
+    brand: 'Honda',
+    price: 80000,
+    type: VehicleType.SCOOTER,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://etimg.etb2bimg.com/thumb/msid-73268968,width-1200,height-900,resizemode-4/.jpg',
+    mileage: '50 kmpl',
+    engine: '109.51 cc',
+    power: '7.79 PS',
+    brakes: 'Drum',
+    description: 'The Honda Activa 6G is the quintessential Indian scooter, offering a perfect blend of performance, comfort, and reliability for city commutes.',
+    specs: { 'Engine Type': 'Fan Cooled, 4 Stroke, SI Engine', 'Displacement': '109.51 cc', 'Max Power': '7.79 PS @ 8000 rpm', 'Fuel Capacity': '5.3 L' },
+  },
+  {
+    id: 3,
+    name: 'Pulsar NS200',
+    brand: 'Bajaj',
+    price: 150000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/bw/models/colors/bajaj-select-model-pewter-grey-1709101653302.png',
+    mileage: '35 kmpl',
+    engine: '199.5 cc',
+    power: '24.5 PS',
+    brakes: 'Disc',
+    description: 'The Bajaj Pulsar NS200 is a performance-oriented street bike that boasts aggressive styling, a powerful engine, and nimble handling.',
+    specs: { 'Engine Type': 'Liquid Cooled, Triple Spark, 4-Valve FI DTS-i', 'Displacement': '199.5 cc', 'Max Power': '24.5 PS @ 9750 rpm', 'Fuel Capacity': '12 L' },
+  },
+  {
+    id: 4,
+    name: 'Ather 450X',
+    brand: 'Ather',
+    price: 160000,
+    type: VehicleType.SCOOTER,
+    fuelType: FuelType.ELECTRIC,
+    imageUrl: 'https://etimg.etb2bimg.com/photo/106592360.cms',
+    mileage: '110 km/charge',
+    engine: '6.4 kW PMSM Motor',
+    power: '8.7 PS',
+    brakes: 'Disc',
+    description: 'The Ather 450X is a premium electric scooter that sets the benchmark for performance and smart features, including a touchscreen dashboard and OTA updates.',
+    specs: { 'Motor Type': 'PMSM', 'Range': '110 km (Eco Mode)', 'Charging Time': '5 hr 40 min', 'Battery Capacity': '3.7 kWh' },
+  },
+  {
+    id: 5,
+    name: 'Classic 350',
+    brand: 'Royal Enfield',
+    price: 220000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/183389/classic-350-right-side-view-62.jpeg?isig=0&q=100',
+    mileage: '37 kmpl',
+    engine: '349 cc',
+    power: '20.2 PS',
+    brakes: 'Disc',
+    description: 'The Royal Enfield Classic 350 is an iconic cruiser with a timeless design, offering a comfortable ride and the signature thump that riders love.',
+    specs: { 'Engine Type': 'Single cylinder, 4 stroke, Air-Oil cooled', 'Displacement': '349.34 cc', 'Max Power': '20.2 PS @ 6100 rpm', 'Fuel Capacity': '13 L' },
+  },
+  {
+    id: 6,
+    name: 'Ola S1 Pro',
+    brand: 'Ola',
+    price: 130000,
+    type: VehicleType.SCOOTER,
+    fuelType: FuelType.ELECTRIC,
+    imageUrl: 'https://gaadiwaadi.com/wp-content/uploads/2024/12/Ola-S1-Pro-Sona-2.jpg',
+    mileage: '170 km/charge',
+    engine: '5.5 kW Mid Drive IPM',
+    power: '11.5 PS',
+    brakes: 'Disc',
+    description: 'The Ola S1 Pro disrupts the EV market with its long range, powerful motor, and a host of tech features, all packed in a sleek, modern design.',
+    specs: { 'Motor Type': 'Mid Drive IPM', 'Range': '170 km (Eco Mode)', 'Top Speed': '120 kmph', 'Battery Capacity': '4 kWh' },
+  },
+   {
+    id: 7,
+    name: 'TVS Raider 125',
+    brand: 'TVS',
+    price: 95000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMtuEINNDADY4QAnko_ndIqEH_QUQdLPgTtg&s',
+    mileage: '57 kmpl',
+    engine: '124.8 cc',
+    power: '11.38 PS',
+    brakes: 'Disc',
+    description: 'The TVS Raider 125 is a sporty commuter bike with a striking design, digital console, and a peppy engine that offers a fun riding experience.',
+    specs: { 'Engine Type': 'Air and oil cooled single cylinder, SI', 'Displacement': '124.8 cc', 'Max Power': '11.38 PS @ 7500 rpm', 'Fuel Capacity': '10 L' },
+  },
+  {
+    id: 8,
+    name: 'Jupiter 125',
+    brand: 'TVS',
+    price: 88000,
+    type: VehicleType.SCOOTER,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://www.tvsmotor.com/tvs-jupiter-125/~/media/TVS%20Jupiter%20125/Disc/Locate%20Dealer/Disc%20Jupiter_Range-393x326.webp',
+    mileage: '50 kmpl',
+    engine: '124.8 cc',
+    power: '8.15 PS',
+    brakes: 'Drum',
+    description: 'The TVS Jupiter 125 is a practical and spacious scooter with the largest underseat storage in its class and an external fuel filler cap for convenience.',
+    specs: { 'Engine Type': 'Single cylinder, 4 stroke, CVTi, fuel injection', 'Displacement': '124.8 cc', 'Max Power': '8.15 PS @ 6500 rpm', 'Fuel Capacity': '5.1 L' },
+  }
+];
+
+export const UPCOMING_VEHICLES: Pick<Vehicle, 'name' | 'brand' | 'imageUrl' | 'description'>[] = [
+    {
+        name: 'Electric Pulsar',
+        brand: 'Bajaj',
+        imageUrl: 'https://www.motorbeam.com/wp-content/uploads/Husqvarna-E-Pilen-Concept.jpg',
+        description: 'Bajaj is rumored to be electrifying its iconic Pulsar brand, promising thrilling performance in a silent, eco-friendly package.'
+    },
+    {
+        name: 'Activa Electric',
+        brand: 'Honda',
+        imageUrl: 'https://c.ndtvimg.com/2024-11/hmhqlkqo_honda-cuv-e_625x300_26_November_24.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=738',
+        description: 'Honda\'s much-anticipated entry into the EV space. Expected to combine Activa\'s reliability with modern electric technology.'
+    }
+];
+
+export const SHOWROOMS: Showroom[] = [
+  { id: 1, name: 'Capital Honda', address: '123, Trunk Road', city: 'Ongole', phone: '9876543210', lat: 15.50, lng: 80.04 },
+  { id: 2, name: 'Advaith Bajaj', address: '45, Kurnool Road', city: 'Ongole', phone: '9876543211', lat: 15.51, lng: 80.05 },
+  { id: 3, name: 'Vayu Ather Space', address: '789, Guntur Road', city: 'Ongole', phone: '9876543212', lat: 15.50, lng: 80.03 },
+  { id: 4, name: 'Ace Royal Enfield', address: '101, Lawyer Pet', city: 'Ongole', phone: '9876543213', lat: 15.52, lng: 80.04 },
+  { id: 5, name: 'Deccan Honda', address: '55, MG Road', city: 'Vijayawada', phone: '9123456780', lat: 16.50, lng: 80.64 },
+  { id: 6, name: 'Sai Service Bajaj', address: '77, Eluru Road', city: 'Vijayawada', phone: '9123456781', lat: 16.51, lng: 80.65 },
+];
+
+
+export const BRANDS = [...new Set(VEHICLES.map(v => v.brand))];
+export const MAX_PRICE = Math.max(...VEHICLES.map(v => v.price));
+export const MIN_PRICE = Math.min(...VEHICLES.map(v => v.price));
