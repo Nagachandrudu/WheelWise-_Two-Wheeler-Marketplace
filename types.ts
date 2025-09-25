@@ -1,12 +1,13 @@
-
 export enum VehicleType {
   BIKE = 'Bike',
   SCOOTER = 'Scooter',
+  BICYCLE = 'Bicycle',
 }
 
 export enum FuelType {
   PETROL = 'Petrol',
   ELECTRIC = 'Electric',
+  MANUAL = 'Manual',
 }
 
 export interface Vehicle {
@@ -23,6 +24,7 @@ export interface Vehicle {
   brakes: string;
   description: string;
   specs: { [key: string]: string };
+  isUserAdded?: boolean;
 }
 
 export interface Showroom {

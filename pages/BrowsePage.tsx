@@ -1,6 +1,6 @@
 
-import React, { useState, useMemo } from 'react';
-import { VEHICLES, BRANDS, MAX_PRICE, MIN_PRICE } from '../constants';
+import React, { useState, useMemo, useContext, useEffect } from 'react';
+import { VehicleContext } from '../context/VehicleContext';
 import { Vehicle, VehicleType, FuelType } from '../types';
 import VehicleCard from '../components/VehicleCard';
 
@@ -8,7 +8,10 @@ const FilterSidebar: React.FC<{
   filters: any;
   setFilters: React.Dispatch<React.SetStateAction<any>>;
   resetFilters: () => void;
-}> = ({ filters, setFilters, resetFilters }) => {
+  brands: string[];
+  maxPrice: number;
+  minPrice: number;
+}> = ({ filters, setFilters, resetFilters, brands, maxPrice, minPrice }) => {
 
   const handleFilterChange = (key: string, value: any) => {
     setFilters((prev: any) => ({ ...prev, [key]: value }));
@@ -42,8 +45,8 @@ const FilterSidebar: React.FC<{
           <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
           <input 
             type="range"
-            min={MIN_PRICE}
-            max={MAX_PRICE}
+            min={minPrice}
+            max={maxPrice}
             value={filters.price}
             onChange={e => handleFilterChange('price', Number(e.target.value))}
             className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
@@ -54,8 +57,8 @@ const FilterSidebar: React.FC<{
         {/* Brands */}
         <div className="mb-6">
           <h4 className="font-semibold mb-2">Brand</h4>
-          <div className="space-y-2">
-            {BRANDS.map(brand => (
+          <div className="space-y-2 max-h-48 overflow-y-auto">
+            {brands.map(brand => (
               <label key={brand} className="flex items-center">
                 <input 
                   type="checkbox"
@@ -104,20 +107,35 @@ const FilterSidebar: React.FC<{
   );
 };
 
-const initialFilters = {
-    search: '',
-    price: MAX_PRICE,
-    brands: [],
-    type: null,
-    fuelType: null,
-};
-
-
 const BrowsePage: React.FC = () => {
+  const { vehicles } = useContext(VehicleContext);
+
+  const { BRANDS, MAX_PRICE, MIN_PRICE } = useMemo(() => {
+    if (vehicles.length === 0) {
+        return { BRANDS: [], MAX_PRICE: 1000000, MIN_PRICE: 0 };
+    }
+    const brands = [...new Set(vehicles.map(v => v.brand))].sort();
+    const maxPrice = Math.max(...vehicles.map(v => v.price));
+    const minPrice = Math.min(...vehicles.map(v => v.price));
+    return { BRANDS: brands, MAX_PRICE: maxPrice, MIN_PRICE: minPrice };
+  }, [vehicles]);
+  
+  const initialFilters = useMemo(() => ({
+      search: '',
+      price: MAX_PRICE,
+      brands: [],
+      type: null,
+      fuelType: null,
+  }), [MAX_PRICE]);
+
   const [filters, setFilters] = useState(initialFilters);
+  
+  useEffect(() => {
+      setFilters(initialFilters);
+  }, [initialFilters]);
 
   const filteredVehicles = useMemo(() => {
-    return VEHICLES.filter((vehicle: Vehicle) => {
+    return vehicles.filter((vehicle: Vehicle) => {
       const { search, price, brands, type, fuelType } = filters;
       if (search && !vehicle.name.toLowerCase().includes(search.toLowerCase())) return false;
       if (price < vehicle.price) return false;
@@ -126,13 +144,20 @@ const BrowsePage: React.FC = () => {
       if (fuelType && vehicle.fuelType !== fuelType) return false;
       return true;
     });
-  }, [filters]);
+  }, [vehicles, filters]);
 
   const resetFilters = () => setFilters(initialFilters);
 
   return (
     <div className="flex flex-col lg:flex-row">
-      <FilterSidebar filters={filters} setFilters={setFilters} resetFilters={resetFilters}/>
+      <FilterSidebar 
+        filters={filters} 
+        setFilters={setFilters} 
+        resetFilters={resetFilters}
+        brands={BRANDS}
+        maxPrice={MAX_PRICE}
+        minPrice={MIN_PRICE}
+      />
       <main className="w-full lg:w-3/4 mt-8 lg:mt-0">
         <h2 className="text-3xl font-bold mb-6">Explore Vehicles ({filteredVehicles.length})</h2>
         {filteredVehicles.length > 0 ? (

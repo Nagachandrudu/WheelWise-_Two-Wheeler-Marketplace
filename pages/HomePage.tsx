@@ -1,13 +1,16 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { VEHICLES, UPCOMING_VEHICLES } from '../constants';
+import { UPCOMING_VEHICLES } from '../constants';
+import { VehicleContext } from '../context/VehicleContext';
 import VehicleCard from '../components/VehicleCard';
-import { BikeIcon, ScooterIcon, ChevronRightIcon } from '../components/Icons';
+import { BikeIcon, ScooterIcon, ChevronRightIcon, BicycleIcon } from '../components/Icons';
 
 const HomePage: React.FC = () => {
-  const featuredBikes = VEHICLES.filter(v => v.type === 'Bike').slice(0, 3);
-  const featuredScooters = VEHICLES.filter(v => v.type === 'Scooter').slice(0, 3);
+  const { vehicles } = useContext(VehicleContext);
+  const featuredBikes = vehicles.filter(v => v.type === 'Bike').slice(0, 3);
+  const featuredScooters = vehicles.filter(v => v.type === 'Scooter').slice(0, 3);
+  const featuredBicycles = vehicles.filter(v => v.type === 'Bicycle').slice(0, 3);
 
   return (
     <div className="space-y-16">
@@ -46,6 +49,19 @@ const HomePage: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredScooters.map(vehicle => (
+            <VehicleCard key={vehicle.id} vehicle={vehicle} />
+          ))}
+        </div>
+      </div>
+
+      {/* Featured Bicycles Section */}
+      <div>
+        <div className="flex items-center justify-between mb-6">
+            <h2 className="text-3xl font-bold text-brand-dark flex items-center"><BicycleIcon className="mr-3 h-8 w-8 text-brand-primary"/>Featured Bicycles</h2>
+            <Link to="/browse" className="text-brand-primary hover:underline font-semibold">View All</Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredBicycles.map(vehicle => (
             <VehicleCard key={vehicle.id} vehicle={vehicle} />
           ))}
         </div>

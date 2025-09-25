@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 type IconProps = {
@@ -72,5 +71,18 @@ export const SparklesIcon: React.FC<IconProps> = ({ className }) => (
       <path d="M19 17v4"/>
       <path d="M3 5h4"/>
       <path d="M17 19h4"/>
+    </svg>
+);
+
+export const BicycleIcon: React.FC<IconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/>
+      <circle cx="15" cy="5" r="1"/><path d="M12 17.5h-3.5l-2-7 4-3 2 7h3.5"/>
+    </svg>
+);
+
+export const UserIcon: React.FC<IconProps> = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
     </svg>
 );

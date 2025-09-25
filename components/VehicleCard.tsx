@@ -1,9 +1,9 @@
-
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Vehicle, FuelType } from '../types';
-import { BoltIcon, GasPumpIcon } from './Icons';
+import { BoltIcon, GasPumpIcon, UserIcon, XIcon } from './Icons';
 import { CompareContext } from '../context/CompareContext';
+import { VehicleContext } from '../context/VehicleContext';
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -11,6 +11,7 @@ interface VehicleCardProps {
 
 const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
   const { compareList, toggleCompare } = useContext(CompareContext);
+  const { removeVehicle, myVehicleIds } = useContext(VehicleContext);
   const isComparing = compareList.some(v => v.id === vehicle.id);
 
   const formatPrice = (price: number) => {
@@ -22,7 +23,21 @@ const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300 flex flex-col">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300 flex flex-col relative">
+      {myVehicleIds.includes(vehicle.id) && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            if (window.confirm('Are you sure you want to remove this listing?')) {
+              removeVehicle(vehicle.id);
+            }
+          }}
+          className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-1.5 hover:bg-red-700 transition-colors z-10"
+          aria-label="Remove listing"
+        >
+          <XIcon className="h-4 w-4" />
+        </button>
+      )}
       <Link to={`/vehicle/${vehicle.id}`} className="block">
         <img src={vehicle.imageUrl} alt={vehicle.name} className="w-full h-48 object-cover" />
       </Link>
@@ -35,7 +50,9 @@ const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle }) => {
         
         <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-600">
             <div className="flex items-center">
-                {vehicle.fuelType === FuelType.ELECTRIC ? <BoltIcon className="h-4 w-4 mr-2 text-yellow-500" /> : <GasPumpIcon className="h-4 w-4 mr-2 text-red-500" />}
+                {vehicle.fuelType === FuelType.ELECTRIC && <BoltIcon className="h-4 w-4 mr-2 text-yellow-500" />}
+                {vehicle.fuelType === FuelType.PETROL && <GasPumpIcon className="h-4 w-4 mr-2 text-red-500" />}
+                {vehicle.fuelType === FuelType.MANUAL && <UserIcon className="h-4 w-4 mr-2 text-green-500" />}
                 <span>{vehicle.mileage}</span>
             </div>
             <div className="flex items-center">

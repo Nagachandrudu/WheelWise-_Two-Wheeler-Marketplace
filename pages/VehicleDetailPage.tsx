@@ -1,7 +1,6 @@
-
 import React, { useState, useContext, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { VEHICLES } from '../constants';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { VehicleContext } from '../context/VehicleContext';
 import { Vehicle } from '../types';
 import { CompareContext } from '../context/CompareContext';
 import { generateReview } from '../services/geminiService';
@@ -13,6 +12,8 @@ interface AIReview {
 
 const VehicleDetailPage: React.FC = () => {
     const { id } = useParams<{ id: string }>();
+    const navigate = useNavigate();
+    const { vehicles, removeVehicle, myVehicleIds } = useContext(VehicleContext);
     const [vehicle, setVehicle] = useState<Vehicle | null>(null);
     const [aiReview, setAiReview] = useState<AIReview | null>(null);
     const [isLoadingReview, setIsLoadingReview] = useState(false);
@@ -21,12 +22,12 @@ const VehicleDetailPage: React.FC = () => {
     const { compareList, toggleCompare } = useContext(CompareContext);
 
     useEffect(() => {
-        const foundVehicle = VEHICLES.find(v => v.id === Number(id));
+        const foundVehicle = vehicles.find(v => v.id === Number(id));
         setVehicle(foundVehicle || null);
         setAiReview(null);
         setError(null);
         setIsLoadingReview(false);
-    }, [id]);
+    }, [id, vehicles]);
 
     const handleGenerateReview = async () => {
         if (!vehicle) return;
@@ -40,6 +41,14 @@ const VehicleDetailPage: React.FC = () => {
             console.error(err);
         } finally {
             setIsLoadingReview(false);
+        }
+    };
+
+    const handleRemove = () => {
+        if (!vehicle) return;
+        if (window.confirm('Are you sure you want to permanently remove this listing?')) {
+            removeVehicle(vehicle.id);
+            navigate('/browse');
         }
     };
 
@@ -64,13 +73,18 @@ const VehicleDetailPage: React.FC = () => {
                     <p className="text-3xl font-semibold text-brand-primary mt-4">{formatPrice(vehicle.price)}</p>
                     <p className="text-sm text-gray-500">Ex-showroom Price</p>
                     <p className="mt-4 text-gray-700">{vehicle.description}</p>
-                    <div className="mt-6 flex space-x-4">
+                    <div className="mt-6 flex flex-wrap gap-4">
                         <button className="flex-1 bg-brand-secondary text-white py-3 px-6 rounded-md font-semibold hover:bg-emerald-600 transition-colors">
                             Book a Test Ride
                         </button>
                         <button onClick={() => toggleCompare(vehicle)} className={`flex-1 py-3 px-6 rounded-md font-semibold transition-colors ${isComparing ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}>
                             {isComparing ? 'Remove from Compare' : 'Add to Compare'}
                         </button>
+                        {myVehicleIds.includes(vehicle.id) && (
+                            <button onClick={handleRemove} className="flex-grow w-full sm:flex-1 sm:w-auto bg-red-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-red-700 transition-colors">
+                                Remove Listing
+                            </button>
+                        )}
                     </div>
                 </div>
             </div>

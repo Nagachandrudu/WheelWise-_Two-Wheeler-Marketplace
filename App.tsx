@@ -2,6 +2,7 @@
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { CompareProvider } from './context/CompareContext';
+import { VehicleProvider } from './context/VehicleContext';
 
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -15,22 +16,24 @@ import AboutPage from './pages/AboutPage';
 
 const App: React.FC = () => {
   return (
-    <CompareProvider>
-      <HashRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/browse" element={<BrowsePage />} />
-            <Route path="/vehicle/:id" element={<VehicleDetailPage />} />
-            <Route path="/compare" element={<ComparePage />} />
-            <Route path="/calculators" element={<CalculatorsPage />} />
-            <Route path="/sell-bike" element={<SellBikePage />} />
-            <Route path="/showrooms" element={<ShowroomsPage />} />
-            <Route path="/about" element={<AboutPage />} />
-          </Routes>
-        </Layout>
-      </HashRouter>
-    </CompareProvider>
+    <VehicleProvider>
+      <CompareProvider>
+        <HashRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/browse" element={<BrowsePage />} />
+              <Route path="/vehicle/:id" element={<VehicleDetailPage />} />
+              <Route path="/compare" element={<ComparePage />} />
+              <Route path="/calculators" element={<CalculatorsPage />} />
+              <Route path="/sell-bike" element={<SellBikePage />} />
+              <Route path="/showrooms" element={<ShowroomsPage />} />
+              <Route path="/about" element={<AboutPage />} />
+            </Routes>
+          </Layout>
+        </HashRouter>
+      </CompareProvider>
+    </VehicleProvider>
   );
 };
 
