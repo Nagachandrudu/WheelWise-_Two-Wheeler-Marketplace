@@ -1,4 +1,5 @@
 
+
 import { Vehicle, VehicleType, FuelType, Showroom } from './types';
 
 export const VEHICLES: Vehicle[] = [
@@ -16,6 +17,11 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Drum',
     description: 'The Hero Splendor Plus is one of the most popular and reliable commuter bikes in India, known for its fuel efficiency and low maintenance cost.',
     specs: { 'Engine Type': 'Air cooled, 4-stroke, single cylinder', 'Displacement': '97.2 cc', 'Max Power': '8.02 PS @ 8000 rpm', 'Fuel Capacity': '9.8 L' },
+    rating: 4.5,
+    reviews: [
+      { id: 1, userName: 'Ravi', rating: 5, comment: 'Best mileage bike, very reliable for daily use.', date: '2023-10-15' },
+      { id: 2, userName: 'Sunita', rating: 4, comment: 'Good bike but the design is a bit old.', date: '2023-09-22' },
+    ],
   },
   {
     id: 2,
@@ -31,6 +37,11 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Drum',
     description: 'The Honda Activa 6G is the quintessential Indian scooter, offering a perfect blend of performance, comfort, and reliability for city commutes.',
     specs: { 'Engine Type': 'Fan Cooled, 4 Stroke, SI Engine', 'Displacement': '109.51 cc', 'Max Power': '7.79 PS @ 8000 rpm', 'Fuel Capacity': '5.3 L' },
+    rating: 4.7,
+    reviews: [
+      { id: 3, userName: 'Amit', rating: 5, comment: 'Smooth engine and very comfortable to ride.', date: '2023-11-01' },
+      { id: 4, userName: 'Priya', rating: 4, comment: 'Great scooter, but could use a front disc brake.', date: '2023-10-18' },
+    ],
   },
   {
     id: 3,
@@ -46,6 +57,10 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The Bajaj Pulsar NS200 is a performance-oriented street bike that boasts aggressive styling, a powerful engine, and nimble handling.',
     specs: { 'Engine Type': 'Liquid Cooled, Triple Spark, 4-Valve FI DTS-i', 'Displacement': '199.5 cc', 'Max Power': '24.5 PS @ 9750 rpm', 'Fuel Capacity': '12 L' },
+    rating: 4.6,
+    reviews: [
+      { id: 5, userName: 'Vikram', rating: 5, comment: 'Amazing performance for the price!', date: '2024-01-10' },
+    ],
   },
   {
     id: 4,
@@ -61,6 +76,11 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The Ather 450X is a premium electric scooter that sets the benchmark for performance and smart features, including a touchscreen dashboard and OTA updates.',
     specs: { 'Motor Type': 'PMSM', 'Range': '110 km (Eco Mode)', 'Charging Time': '5 hr 40 min', 'Battery Capacity': '3.7 kWh' },
+    rating: 4.8,
+    reviews: [
+        { id: 6, userName: 'Neha', rating: 5, comment: 'The future of scooters is here. Amazing tech!', date: '2024-02-20' },
+        { id: 7, userName: 'Karan', rating: 4, comment: 'A bit pricey but worth it for the features.', date: '2024-02-15' },
+    ],
   },
   {
     id: 5,
@@ -76,6 +96,10 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The Royal Enfield Classic 350 is an iconic cruiser with a timeless design, offering a comfortable ride and the signature thump that riders love.',
     specs: { 'Engine Type': 'Single cylinder, 4 stroke, Air-Oil cooled', 'Displacement': '349.34 cc', 'Max Power': '20.2 PS @ 6100 rpm', 'Fuel Capacity': '13 L' },
+    rating: 4.7,
+    reviews: [
+        { id: 8, userName: 'Rajesh', rating: 5, comment: 'Nothing beats the feeling of riding a Classic 350.', date: '2023-12-05' },
+    ],
   },
   {
     id: 6,
@@ -91,6 +115,10 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The Ola S1 Pro disrupts the EV market with its long range, powerful motor, and a host of tech features, all packed in a sleek, modern design.',
     specs: { 'Motor Type': 'Mid Drive IPM', 'Range': '170 km (Eco Mode)', 'Top Speed': '120 kmph', 'Battery Capacity': '4 kWh' },
+    rating: 4.3,
+    reviews: [
+      { id: 9, userName: 'Deepa', rating: 4, comment: 'Excellent range but the software has some bugs.', date: '2024-01-25' },
+    ],
   },
    {
     id: 7,
@@ -106,6 +134,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The TVS Raider 125 is a sporty commuter bike with a striking design, digital console, and a peppy engine that offers a fun riding experience.',
     specs: { 'Engine Type': 'Air and oil cooled single cylinder, SI', 'Displacement': '124.8 cc', 'Max Power': '11.38 PS @ 7500 rpm', 'Fuel Capacity': '10 L' },
+    rating: 4.6,
+    reviews: [],
   },
   {
     id: 8,
@@ -121,6 +151,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Drum',
     description: 'The TVS Jupiter 125 is a practical and spacious scooter with the largest underseat storage in its class and an external fuel filler cap for convenience.',
     specs: { 'Engine Type': 'Single cylinder, 4 stroke, CVTi, fuel injection', 'Displacement': '124.8 cc', 'Max Power': '8.15 PS @ 6500 rpm', 'Fuel Capacity': '5.1 L' },
+    rating: 4.5,
+    reviews: [],
   },
   {
     id: 9,
@@ -136,6 +168,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'With its aggressive styling and a potent 155cc liquid-cooled engine, the Yamaha MT-15 offers a thrilling ride for the urban warrior.',
     specs: { 'Engine Type': 'Liquid cooled, 4-stroke, SOHC, 4-valve', 'Displacement': '155 cc', 'Max Power': '18.4 PS @ 10000 rpm', 'Fuel Capacity': '10 L' },
+    rating: 4.8,
+    reviews: [],
   },
   {
     id: 10,
@@ -151,6 +185,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The KTM 390 Duke is the ultimate corner rocket, boasting a lightweight chassis, powerful engine, and a suite of electronics for an exhilarating experience.',
     specs: { 'Engine Type': 'Single Cylinder, Liquid Cooled, DOHC', 'Displacement': '399 cc', 'Max Power': '46 PS @ 8500 rpm', 'Fuel Capacity': '15 L' },
+    rating: 4.9,
+    reviews: [],
   },
   {
     id: 11,
@@ -166,6 +202,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'A modern classic, the Honda H\'ness CB350 combines timeless design with modern features and a refined, torquey engine for a majestic ride.',
     specs: { 'Engine Type': '4 Stroke, SI Engine', 'Displacement': '348.36 cc', 'Max Power': '21.07 PS @ 5500 rpm', 'Fuel Capacity': '15 L' },
+    rating: 4.7,
+    reviews: [],
   },
   {
     id: 12,
@@ -181,6 +219,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The TVS Apache RTR 160 4V is a race-bred machine for the streets, offering sharp handling, a rev-happy engine, and sporty ergonomics.',
     specs: { 'Engine Type': 'SI, 4 stroke, Oil cooled, SOHC, Fi', 'Displacement': '159.7 cc', 'Max Power': '17.55 PS @ 9250 rpm', 'Fuel Capacity': '12 L' },
+    rating: 4.6,
+    reviews: [],
   },
   {
     id: 13,
@@ -196,6 +236,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The Hero Sprint Pro is a robust mountain bike designed for off-road trails, featuring front suspension and dual disc brakes for superior control.',
     specs: { 'Frame': 'Alloy', 'Gears': '21-Speed Shimano', 'Suspension': 'Front', 'Brakes': 'Dual Disc' },
+    rating: 4.2,
+    reviews: [],
   },
   {
     id: 14,
@@ -211,6 +253,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'V-Brake',
     description: 'A versatile hybrid cycle from Decathlon\'s Btwin, perfect for both city commuting and weekend rides on country paths. Simple and efficient.',
     specs: { 'Frame': 'Steel', 'Gears': '8-Speed Microshift', 'Suspension': 'None', 'Brakes': 'V-Brakes' },
+    rating: 4.4,
+    reviews: [],
   },
   {
     id: 15,
@@ -226,6 +270,8 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'The Firefox Road Runner is a lightweight road bike built for speed and efficiency, featuring a sleek alloy frame and responsive disc brakes.',
     specs: { 'Frame': 'Alloy Hybrid', 'Gears': '14-Speed Shimano', 'Suspension': 'None', 'Brakes': 'Mechanical Disc' },
+    rating: 4.5,
+    reviews: [],
   },
   {
     id: 16,
@@ -241,29 +287,118 @@ export const VEHICLES: Vehicle[] = [
     brakes: 'Disc',
     description: 'A trail-worthy daily rider that\'s perfectly suited for everyday adventures, on and off the trail. Features a suspension fork and a 2x8 drivetrain.',
     specs: { 'Frame': 'Alpha Silver Aluminum', 'Gears': '16-Speed Shimano', 'Suspension': 'SR Suntour XCT 30', 'Brakes': 'Hydraulic Disc' },
+    rating: 4.8,
+    reviews: [],
+  },
+  {
+    id: 17,
+    name: 'Passion Pro',
+    brand: 'Hero',
+    price: 85000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/143781/passion-pro-2023-right-front-three-quarter.jpeg?isig=0&q=100',
+    mileage: '70 kmpl',
+    engine: '113.2 cc',
+    power: '9.15 PS',
+    brakes: 'Drum',
+    description: 'The Hero Passion Pro is a stylish commuter bike that offers a great blend of mileage, performance, and features.',
+    specs: { 'Engine Type': 'Air cooled, 4-stroke', 'Displacement': '113.2 cc', 'Max Power': '9.15 PS @ 7500 rpm', 'Fuel Capacity': '10 L' },
+    rating: 4.4,
+    reviews: [],
+  },
+  {
+    id: 18,
+    name: 'Glamour XTEC',
+    brand: 'Hero',
+    price: 88000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/131073/glamour-xtec-right-front-three-quarter.jpeg?isig=0&q=100',
+    mileage: '60 kmpl',
+    engine: '124.7 cc',
+    power: '10.84 PS',
+    brakes: 'Disc',
+    description: 'The Hero Glamour XTEC is a feature-packed commuter with a digital console, Bluetooth connectivity, and a refined engine.',
+    specs: { 'Engine Type': 'Air cooled, 4-stroke', 'Displacement': '124.7 cc', 'Max Power': '10.84 PS @ 7500 rpm', 'Fuel Capacity': '10 L' },
+    rating: 4.5,
+    reviews: [],
+  },
+  {
+    id: 19,
+    name: 'Apache RR 310',
+    brand: 'TVS',
+    price: 272000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/110185/rr-310-right-front-three-quarter-3.jpeg?isig=0&q=100',
+    mileage: '30 kmpl',
+    engine: '312.2 cc',
+    power: '34 PS',
+    brakes: 'Disc',
+    description: 'Born on the racetrack, the TVS Apache RR 310 is a supersport bike that offers cutting-edge technology, sharp handling, and thrilling performance.',
+    specs: { 'Engine Type': 'SI, 4 stroke, 4 valve, Single cylinder, Liquid cooled, Reverse inclined', 'Displacement': '312.2 cc', 'Max Power': '34 PS @ 9700 rpm', 'Fuel Capacity': '11 L' },
+    rating: 4.8,
+    reviews: [],
+  },
+  {
+    id: 20,
+    name: '42',
+    brand: 'Jawa',
+    price: 198000,
+    type: VehicleType.BIKE,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/134449/42-2-1-right-front-three-quarter.jpeg?isig=0&q=100',
+    mileage: '33 kmpl',
+    engine: '294.72 cc',
+    power: '27.33 PS',
+    brakes: 'Disc',
+    description: 'The Jawa 42 is a modern classic that blends retro styling with a powerful liquid-cooled engine, offering a unique and spirited riding experience.',
+    specs: { 'Engine Type': 'Single Cylinder, 4 Stroke, Liquid Cooled, DOHC', 'Displacement': '294.72 cc', 'Max Power': '27.33 PS', 'Fuel Capacity': '13.2 L' },
+    rating: 4.6,
+    reviews: [],
+  },
+  {
+    id: 21,
+    name: 'Access 125',
+    brand: 'Suzuki',
+    price: 82000,
+    type: VehicleType.SCOOTER,
+    fuelType: FuelType.PETROL,
+    imageUrl: 'https://imgd.aeplcdn.com/1280x720/n/cw/ec/135311/access-125-right-front-three-quarter-2.jpeg?isig=0&q=100',
+    mileage: '52 kmpl',
+    engine: '124 cc',
+    power: '8.7 PS',
+    brakes: 'Disc',
+    description: 'The Suzuki Access 125 is a popular family scooter known for its refined engine, comfortable ride, and practical features like external fuel filling.',
+    specs: { 'Engine Type': '4-Stroke, 1-Cylinder, Air Cooled', 'Displacement': '124 cc', 'Max Power': '8.7 PS @ 6750 rpm', 'Fuel Capacity': '5 L' },
+    rating: 4.7,
+    reviews: [],
   }
 ];
 
-export const UPCOMING_VEHICLES: Pick<Vehicle, 'name' | 'brand' | 'imageUrl' | 'description'>[] = [
+export const UPCOMING_VEHICLES: (Pick<Vehicle, 'name' | 'brand' | 'imageUrl' | 'description'> & { launchDate: string })[] = [
     {
         name: 'Electric Pulsar',
         brand: 'Bajaj',
         imageUrl: 'https://www.motorbeam.com/wp-content/uploads/Husqvarna-E-Pilen-Concept.jpg',
-        description: 'Bajaj is rumored to be electrifying its iconic Pulsar brand, promising thrilling performance in a silent, eco-friendly package.'
+        description: 'Bajaj is rumored to be electrifying its iconic Pulsar brand, promising thrilling performance in a silent, eco-friendly package.',
+        launchDate: 'December 2025',
     },
     {
         name: 'Activa Electric',
         brand: 'Honda',
         imageUrl: 'https://c.ndtvimg.com/2024-11/hmhqlkqo_honda-cuv-e_625x300_26_November_24.jpg?im=FeatureCrop,algorithm=dnn,width=1200,height=738',
-        description: 'Honda\'s much-anticipated entry into the EV space. Expected to combine Activa\'s reliability with modern electric technology.'
+        description: 'Honda\'s much-anticipated entry into the EV space. Expected to combine Activa\'s reliability with modern electric technology.',
+        launchDate: 'January 2026',
     }
 ];
 
 export const SHOWROOMS: Showroom[] = [
-  { id: 1, name: 'Capital Honda', address: '123, Trunk Road', city: 'Ongole', phone: '9876543210', lat: 15.50, lng: 80.04 },
-  { id: 2, name: 'Advaith Bajaj', address: '45, Kurnool Road', city: 'Ongole', phone: '9876543211', lat: 15.51, lng: 80.05 },
-  { id: 3, name: 'Vayu Ather Space', address: '789, Guntur Road', city: 'Ongole', phone: '9876543212', lat: 15.50, lng: 80.03 },
-  { id: 4, name: 'Ace Royal Enfield', address: '101, Lawyer Pet', city: 'Ongole', phone: '9876543213', lat: 15.52, lng: 80.04 },
+  { id: 1, name: 'Capital Honda', address: 'GNT Road, Opp. RTC Bus Stand', city: 'Ongole', phone: '9876543210', lat: 15.507, lng: 80.045 },
+  { id: 2, name: 'Advaith Bajaj', address: '6-254, Kurnool Road, Santhapeta', city: 'Ongole', phone: '9876543211', lat: 15.505, lng: 80.040 },
+  { id: 3, name: 'Vayu Ather Space', address: 'Beside Capital Honda, Grand Trunk Road', city: 'Ongole', phone: '9876543212', lat: 15.507, lng: 80.046 },
+  { id: 4, name: 'Ace Royal Enfield', address: 'Plot no 57, Industrial Estate, Kurnool Rd', city: 'Ongole', phone: '9876543213', lat: 15.498, lng: 80.035 },
   { id: 5, name: 'Deccan Honda', address: '55, MG Road', city: 'Vijayawada', phone: '9123456780', lat: 16.50, lng: 80.64 },
   { id: 6, name: 'Sai Service Bajaj', address: '77, Eluru Road', city: 'Vijayawada', phone: '9123456781', lat: 16.51, lng: 80.65 },
 ];

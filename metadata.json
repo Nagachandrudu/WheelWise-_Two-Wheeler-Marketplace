@@ -1,5 +1,7 @@
 {
   "name": "WheelWise - Two-Wheeler Marketplace",
   "description": "A modern web application to browse, compare, and manage two-wheelers. Users can explore bikes, scooters, and EVs, use calculators for EMI and fuel costs, book test rides, and sell their used vehicles.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "camera"
+  ]
 }

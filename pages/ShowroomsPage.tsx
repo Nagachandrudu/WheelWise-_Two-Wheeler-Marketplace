@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { SHOWROOMS } from '../constants';
 import { MapPinIcon, PhoneIcon } from '../components/Icons';
@@ -41,7 +42,7 @@ const ShowroomsPage: React.FC = () => {
                             </div>
                         </div>
                         <div className="mt-6">
-                            <a href={`https://www.google.com/maps/search/?api=1&query=${showroom.lat},${showroom.lng}`} target="_blank" rel="noopener noreferrer" className="inline-block w-full text-center bg-brand-secondary text-white py-2 px-4 rounded-md font-semibold hover:bg-emerald-600 transition-colors">
+                            <a href={`https://www.google.com/maps?q=${showroom.lat},${showroom.lng}`} target="_blank" rel="noopener noreferrer" className="inline-block w-full text-center bg-brand-secondary text-white py-2 px-4 rounded-md font-semibold hover:bg-emerald-600 transition-colors">
                                 View on Map
                             </a>
                         </div>

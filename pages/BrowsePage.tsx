@@ -169,7 +169,7 @@ const BrowsePage: React.FC = () => {
         ) : (
             <div className="text-center py-16">
                 <p className="text-xl text-gray-600">No vehicles match your criteria.</p>
-                <button onClick={resetFilters} className="mt-4 px-6 py-2 bg-brand-primary text-white rounded-md">Clear Filters</button>
+                <button onClick={resetFilters} className="mt-4 px-6 py-2 bg-brand-primary text-white rounded-md btn-animated-primary">Clear Filters</button>
             </div>
         )}
       </main>

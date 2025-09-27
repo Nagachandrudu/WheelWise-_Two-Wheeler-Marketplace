@@ -13,7 +13,7 @@ const ComparePage: React.FC = () => {
             <div className="text-center py-20">
                 <h1 className="text-3xl font-bold">Compare Vehicles</h1>
                 <p className="mt-4 text-gray-600">You haven't selected any vehicles to compare.</p>
-                <Link to="/browse" className="mt-6 inline-block bg-brand-primary text-white px-6 py-2 rounded-md font-semibold">
+                <Link to="/browse" className="mt-6 inline-block bg-brand-primary text-white px-6 py-2 rounded-md font-semibold btn-animated-primary">
                     Start Browsing
                 </Link>
             </div>

@@ -1,4 +1,3 @@
-
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { VehicleContext } from '../context/VehicleContext';
@@ -52,7 +51,7 @@ const SellBikePage: React.FC = () => {
                 <h1 className="text-3xl font-bold text-brand-secondary">Thank You!</h1>
                 <p className="mt-4 text-lg text-gray-700">Your bike has been listed successfully and is now available for others to browse.</p>
                 <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <Link to="/browse" className="w-full sm:w-auto px-6 py-3 bg-brand-primary text-white rounded-md font-semibold hover:bg-blue-800 transition-colors">
+                    <Link to="/browse" className="w-full sm:w-auto px-6 py-3 bg-brand-primary text-white rounded-md font-semibold btn-animated-primary">
                         Browse All Vehicles
                     </Link>
                     <button 
@@ -160,7 +159,7 @@ const SellBikePage: React.FC = () => {
                 </div>
 
                 <div className="text-center pt-4">
-                    <button type="submit" className="w-full md:w-auto px-12 py-3 bg-brand-primary text-white rounded-md font-semibold text-lg hover:bg-blue-800 transition-colors">
+                    <button type="submit" className="w-full md:w-auto px-12 py-3 bg-brand-primary text-white rounded-md font-semibold text-lg btn-animated-primary">
                         List Your Vehicle
                     </button>
                 </div>

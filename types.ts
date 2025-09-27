@@ -10,6 +10,19 @@ export enum FuelType {
   MANUAL = 'Manual',
 }
 
+export interface User {
+  name: string;
+  isDealer?: boolean;
+}
+
+export interface Review {
+  id: number;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
 export interface Vehicle {
   id: number;
   name: string;
@@ -24,6 +37,8 @@ export interface Vehicle {
   brakes: string;
   description: string;
   specs: { [key: string]: string };
+  rating: number;
+  reviews: Review[];
   isUserAdded?: boolean;
 }
 

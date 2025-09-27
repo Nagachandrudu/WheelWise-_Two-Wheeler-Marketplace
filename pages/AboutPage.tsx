@@ -6,12 +6,12 @@ const AboutPage: React.FC = () => {
   // The link must be a DIRECT link to the image file (e.g., ending in .jpg or .png).
   // Sharing links from services like Google Drive or OneDrive will not work.
   const teamMembers = [
-    { name: 'Chandu', role: 'Founder & CEO', imageUrl: `https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=` },
+    { name: 'Chandu', role: 'developer', imageUrl: `https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=` },
     
-    { name: 'jagadeesh', role: 'Lead Mechanic', imageUrl: `https://1drv.ms/i/c/c82aab98b37557b6/EUb33esCfDBGvTJiUfFavyQB-NYkE8z93S_tNlwltiafew?e=nKcoQF` },
-    { name: 'ayyappa', role: 'Head of Sales', imageUrl: '' },
-    { name: 'kumar', role: 'Customer Experience', imageUrl: '' },
-    { name: 'harsha', role: 'Customer Experience', imageUrl: '' },
+    { name: 'jagadeesh', role: 'developer ', imageUrl: `https://1drv.ms/i/c/c82aab98b37557b6/EUb33esCfDBGvTJiUfFavyQB-NYkE8z93S_tNlwltiafew?e=nKcoQF` },
+    { name: 'ayyappa', role: ' developer', imageUrl: '' },
+    { name: 'kumar', role: 'developer', imageUrl: '' },
+    { name: 'harsha', role: 'developer', imageUrl: '' },
   ];
 
   return (
