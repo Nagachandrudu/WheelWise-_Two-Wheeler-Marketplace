@@ -12,7 +12,7 @@ const AboutPage: React.FC = () => {
     { 
       name: 'Jagadeesh', 
       role: 'Frontend Developer', 
-      imageUrl: 'https://via.placeholder.com/128', 
+      imageUrl: 'https://media.licdn.com/dms/image/v2/D4D03AQFSukv_6RYCtw/profile-displayphoto-scale_400_400/B4DZmPCw6.GkAg-/0/1759041494903?e=1761782400&v=beta&t=byNZSeLoe-06xkqN4QZjeGAW6ZU1UMj9da79yj9U8_s', 
       contributions: ['Vehicle Browsing & Filtering System', 'Vehicle Detail Page & Comparison Logic', 'Data Structure & Mockups'] 
     },
     { 
