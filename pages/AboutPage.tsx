@@ -6,12 +6,11 @@ const AboutPage: React.FC = () => {
   // The link must be a DIRECT link to the image file (e.g., ending in .jpg or .png).
   // Sharing links from services like Google Drive or OneDrive will not work.
   const teamMembers = [
-    { name: 'Chandu', role: 'developer', imageUrl: `https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=` },
-    
-    { name: 'jagadeesh', role: 'developer ', imageUrl: `https://1drv.ms/i/c/c82aab98b37557b6/EUb33esCfDBGvTJiUfFavyQB-NYkE8z93S_tNlwltiafew?e=nKcoQF` },
-    { name: 'ayyappa', role: ' developer', imageUrl: '' },
-    { name: 'kumar', role: 'developer', imageUrl: '' },
-    { name: 'harsha', role: 'developer', imageUrl: '' },
+    { name: 'NagaChandrudu', role: 'developer', imageUrl: 'https://media.licdn.com/dms/image/v2/D4D16AQEcftqe-ts1WQ/profile-displaybackgroundimage-shrink_350_1400/B4DZY6RTB6G4Ac-/0/1744734336136?e=1761782400&v=beta&t=BNnFDEQXiLUDIbRwxVeT7TIc8R47N01Zh2Ow4TpD1kU' },
+    { name: 'jagadeesh', role: 'developer ', imageUrl: 'https://www.instagram.com/jagadeesh_2522/p/DO2m1Xgknko/' },
+    { name: 'V L A Durga Nagesh', role: ' developer', imageUrl: '' },
+    { name: 'Kumar Redddy', role: 'developer', imageUrl: '' },
+    { name: 'Harsha', role: 'developer', imageUrl: '' },
   ];
 
   return (
