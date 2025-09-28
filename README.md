@@ -18,7 +18,8 @@ View your app in AI Studio: https://ai.studio/apps/drive/1pU3lfVIpAt0nSdkCZzfj44
    `npm run dev`
 
 
-Problem Statement Chosen
+Problem Statement: Build a two-wheeler marketplace web app
+
 
 The core problem WheelWise aims to solve is the fragmented and overwhelming process of buying a two-wheeler. The application addresses the challenges buyers face in finding consolidated information, effectively comparing models, understanding financial implications, and connecting with local dealers. The goal is to create a unified, user-friendly digital platform that streamlines the entire journey, from research to booking a test ride, simplifying decision-making for consumers.
 
