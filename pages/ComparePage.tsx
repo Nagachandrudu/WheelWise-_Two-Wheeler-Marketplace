@@ -53,7 +53,7 @@ const ComparePage: React.FC = () => {
                                 <td className="p-4 font-semibold capitalize">{key}</td>
                                 {compareList.map(vehicle => (
                                     <td key={vehicle.id} className="p-4 text-center">
-                                        {key === 'price' ? formatPrice(vehicle[key]) : vehicle[key]}
+                                        {key === 'price' ? formatPrice(vehicle[key] as number) : vehicle[key]}
                                     </td>
                                 ))}
                             </tr>
@@ -66,7 +66,8 @@ const ComparePage: React.FC = () => {
                                 <td className="p-4 font-semibold">{key}</td>
                                 {compareList.map(vehicle => (
                                     <td key={vehicle.id} className="p-4 text-center">
-                                        {vehicle.specs[key] || '-'}
+                                        {/* FIX: Cast `key` to string to resolve index type error. */}
+                                        {vehicle.specs[key as string] || '-'}
                                     </td>
                                 ))}
                             </tr>
