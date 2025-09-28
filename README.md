@@ -17,7 +17,8 @@ View your app in AI Studio: https://ai.studio/apps/drive/1pU3lfVIpAt0nSdkCZzfj44
    `npm run dev`
 
 
-Project Proposal: WheelWise - Two-Wheeler Marketplace
+Problem Statement: Build a two-wheeler marketplace web app
+
 1. Detailed Proposal & Prototype Plan
 Proposal: WheelWise is a modern, all-in-one digital marketplace designed to simplify the entire lifecycle of two-wheeler ownership. The platform aims to be the ultimate destination for enthusiasts and daily commuters alike, providing a seamless experience from initial research to purchase, maintenance, and eventual resale. By integrating powerful tools, an intuitive user interface, and cutting-edge AI features, WheelWise will empower users to make informed decisions with confidence and ease.
 
